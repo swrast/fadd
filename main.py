@@ -34,8 +34,8 @@ else:
 x = y = w = h = 0
 
 for z in root.xrandr_get_monitors().monitors:
-    if z.x < pos.x and z.x + z.width_in_pixels + 1 > pos.x and \
-        z.y < pos.y and z.y + z.height_in_pixels + 1 > pos.y:
+    if z.x <= pos.x and z.x + z.width_in_pixels > pos.x and \
+        z.y <= pos.y and z.y + z.height_in_pixels > pos.y:
         x, y, w, h = z.x, z.y, z.width_in_pixels, z.height_in_pixels
 
 print(f"{w}x{h}+{x}+{y}")
